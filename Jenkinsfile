@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     def customImage = docker.image("my-yann:latest")
-                    customImage.run("-p 8080:80")
+                    customImage.run("-p 8086:8080")
                 }
             }
         }

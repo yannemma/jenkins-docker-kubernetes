@@ -5,7 +5,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("my-webapp:latest", ".")
+                    docker.build("my-yann:latest", ".")
                 }
             }
         }
@@ -13,7 +13,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    def customImage = docker.image("my-webapp:latest")
+                    def customImage = docker.image("my-yann:latest")
                     customImage.run("-p 8083:80")
                 }
             }
